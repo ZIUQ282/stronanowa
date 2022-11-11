@@ -28,8 +28,8 @@ body .ufolud {
 
 .slider-cursor {
   position: absolute;
-  bottom: 0;
-  left: 400px;
+  top: 0;
+  left: 200px;
   /* Rounded sliders */
 }
 .slider-cursor img {
