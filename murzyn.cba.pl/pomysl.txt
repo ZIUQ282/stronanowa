@@ -1,0 +1,4 @@
+zaznaczenie windows na stronie:
+-div/table => css podobny do windowsowego zaznazcenia,
+pozycja myszy zmienna(chuj wie czy zrobione)
+pozycja myszy po kliknieciu(nie zmienia sie)

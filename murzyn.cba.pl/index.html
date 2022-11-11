@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl" id="wszystko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ziuq282">
+    <link rel="shortcut icon" href="content/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>murzyn</title>
+    <style>
+          #windows-select{
+            z-index: 1000;
+            position: absolute;
+            border: 1px solid rgb(0, 120, 215);
+            background-color: rgba(0, 120, 215, 1.0);
+          }
+    </style>
+    <script>
+        onmousedown = function funkcjamysz(){
+            
+            onmousedown = onmousemove = function zmiennamysz(e){
+                var myszx = e.clientX,
+                    myszy = e.clientY;
+                    console.log(myszy, myszx)
+            }
+            var body  = document.getElementsByTagName('body')[0];
+            var tebeleczka  = document.createElement('table');
+
+            if(stalax<myszx && stalay<myszy){
+                tebeleczka.style.left = stalax;
+                tebeleczka.style.top = stalay;
+            }else if(stalax>myszx && stalay>myszy){
+                tebeleczka.style.left = myszx;
+                tebeleczka.style.top = myszy;
+            }else if(stalax<myszx && stalay>myszy){
+                tebeleczka.style.left = stalax;
+                tebeleczka.style.top = myszy;
+            }else if(stalax>myszx && stalay<myszy){
+                tebeleczka.style.left = myszx;
+                tebeleczka.style.top = stalay;
+            }
+            tebeleczka.id = 'windows-select';
+            body.appendChild(tebeleczka);
+        }
+    </script>
+</head>
+<body>
+    <div class="dawid-jasper-dziad">
+        <button class="hajs" onclick="hajss()"><img src="content/50ziko.jpg" alt="50zl"><audio id="hajss" src="content/dziad.ogg"></audio></button>
+        <script>
+            function hajss(){
+                document.getElementById("hajss").play();
+            }
+        </script>
+    </div>
+
+    <div class="demacia">
+        <button class="hawenkenszynkin" onclick="hawenken()"><img src="content/garen.png" alt="hawenken"><audio id="szynkin" src="content/hawenken szynkin.ogg"></audio></button>
+        <script>
+            function hawenken(){
+                document.getElementById("szynkin").play();
+            }
+        </script>
+    </div>
+
+    <div class="dawidSSonek">
+        <button class="ufolud" onclick="ululu()"><img src="content/frajersonek.png" alt="ufo"><audio id="dawidufo" src="content/ufolud.ogg"></audio></button>
+        <script>
+            function ululu(){
+                document.getElementById("dawidufo").play();
+            }
+        </script>
+    </div>
+
+    <div style="position:absolute; right:140px; top:100px;">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <img src="content/dziewczynki.png" width="100px">        
+        </a>
+    </div>
+
+    <div class="slider-cursor">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <script>
+            $('.slider').click(function() {
+                var checkbox = $('input[type="checkbox"]');
+                if ($(checkbox).prop('checked')) {
+                    console.log("Was Checked");
+                    var head  = document.getElementsByTagName('head')[0];
+                    var link  = document.createElement('link');
+                    link.rel  = 'stylesheet';
+                    link.href = 'troll.css';
+                    link.id = 'niepowtarzalnee';
+                    head.appendChild(link);
+                    document.querySelector('#niepowtarzalne').remove();
+                } else {
+                  console.log("Was Not Checked");
+                  var head  = document.getElementsByTagName('head')[0];
+                  var link  = document.createElement('link');
+                  link.rel  = 'stylesheet';
+                  link.href = 'balls.css';
+                  link.id = 'niepowtarzalne';
+                  head.appendChild(link);
+                  document.querySelector('#niepowtarzalnee').remove();
+                }
+              });
+        </script>
+    </div>
+<table><td></td></table>
+    <div id="app"></div>
+<script src="https://unpkg.com/webamp"></script>
+<script>
+    const Webamp = window.Webamp;
+    const webamp = new Webamp({
+        initialTracks: [
+            {
+                metaData: {
+                    artist: "jxhnny i norbi",
+                    title: "orzeł remix"
+                },
+                // NOTE: Your audio file must be served from the same domain as your HTML
+                // file, or served with permissive CORS HTTP headers:
+                // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+                url: "",
+                duration: 250
+            },
+        ],
+         initialSkin: {
+    url: "content/jasperok.wsz"},
+    });
+    
+    webamp.renderWhenReady(document.getElementById('app'));
+</script>
+</body>
+</html>
